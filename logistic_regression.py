@@ -14,7 +14,7 @@ def standar_scaler(X):
     return X, mean, stdev
 
 def gradient_descent(theta, X, y):
-    learning_rate = 0.0001
+    learning_rate = 0.1
     X, mean, stdev = standar_scaler(X)
     X = np.c_[np.ones(X.shape[0]), X]
     testha = [1.0, 1.0, 1.0]
@@ -48,7 +48,7 @@ def main():
         print(new_pred[z], y[z])
         if new_pred[z] == y[z]:
             Accuracy += 1
-    print(Accuracy / len(new_pred))
+    print(Accuracy / len(new_pred) * 100)
 if __name__ == "__main__":
     main();
 
